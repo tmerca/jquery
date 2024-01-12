@@ -1,5 +1,28 @@
 body{
-    text-align: center;
     margin: 0 auto;
     max-width: 600px;
+}
+
+li {
+    list-style-type: none;
+}
+
+.table {
+    text-align: center;
+}
+
+.box > p {
+    font-size: 40px;
+}
+
+.message > li{
+    font-size: 25px;
+}
+
+.correct {
+    color: rgb(143, 211, 41);
+}
+
+.incorrect {
+    color: crimson;
 }
