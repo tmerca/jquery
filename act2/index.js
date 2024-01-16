@@ -19,14 +19,16 @@ function createGame() {
   content = [...arr1, ...arr2];
 
   // Unsorting the content of the table
-  // function shuffleArray(content) {
-  //   content.sort(() => Math.random() - 0.5);
-  // }
-  // shuffleArray(content);
+  function shuffleArray(content) {
+    content.sort(() => Math.random() - 0.5);
+  }
+  shuffleArray(content);
   console.log(content);
 
   $("body").append("<ul class='table'></ul>");
   $("body").append("<ul class='message'></ul>");
+  $(".message").css("text-align", "center");
+  $("body").append("<div class='gameEnded'></div>");
 
   // Creating two boxes with the same number and adding some css
 
@@ -48,37 +50,51 @@ function createGame() {
 
   let nums = [];
   let num;
-  let numOfRightCouples = numOfCouples;
-  console.log(numOfRightCouples);
+  let correctCouples = content.length / 2;
+  console.log(correctCouples);
+  let counter = 0;
 
   // Taking the value of the box we click and checking if we got couple
-    $(".box").on("click", function () {
-      $(this).addClass("selected");
-      num = $(this).find("p").show().text();
-      if (nums.length < 2) {
-        nums.push(num);
-        if (nums[0] == nums[1]) {
-          $(".message").append(
-            "<li><p class='correct'>Pareja de " + num + " encontrada"
+  $(".box").on("click", function () {
+    
+    //EFFECT OF FLIPPING THE CARD
+    
+    // CHEKING IF THE TWO NUMBERS ARE THE SAME
+    $(this).addClass("selected");
+    num = $(this).find("p").show().text();
+    if (nums.length < 2) {
+      nums.push(num);
+      if (nums[0] == nums[1]) {
+        setTimeout(() => {
+          $(".selected").css("display", "none");
+        }, 1000);
+        nums = [];
+        counter += 1;
+        $(".message").append(
+          "<li><p class='correct'>Pareja encontrada, parejas restantes: " + (correctCouples - counter) + "</p>"
+        );
+        if (counter == correctCouples) {
+          $(".gameEnded").append(
+            "<p>Congratulations! You finished the game!</p>"
           );
-          setTimeout(() => {
-            $(".selected").css("display", "none");
-          }, 1000);
-          counter += 1;
-          console.log(counter);
-          nums = [];
-        } else if (nums.length > 1 && nums[0] != nums[1]) {
-          $(this).removeClass("selected");
-          setTimeout(() => {
-            $(".message").append(
-              "<li><p class='incorrect'>Pareja de " + num + " no encontrada"
-            );
-          }, 1000);
-          nums = [];
+          $(".gameEnded").css("text-align", "center").css("font-size", "25px");
         }
+      } else if (nums.length > 1 && nums[0] != nums[1]) {
+        setTimeout(() => {
+          $(".selected").find("p").hide();
+          $(".selected").removeClass("selected");
+        }, 1000);
+        
+        $(".message").append(
+          "<li><p class='incorrect'>Pareja no encontrada"
+        );
+
+        setTimeout(() => {
+          $(".incorrect").hide();
+        }, 2000);
+
+        nums = [];
       }
-    });
-  if(counter == numOfRightCouples){
-    console.log("You win");
-  }
+    }
+  });
 }

@@ -7,6 +7,11 @@ li {
     list-style-type: none;
 }
 
+img {
+    height: 110px;
+    width: 110px;
+}
+
 .table {
     text-align: center;
 }
@@ -16,7 +21,7 @@ li {
 }
 
 .message > li{
-    font-size: 25px;
+    font-size: 20px;
 }
 
 .correct {
