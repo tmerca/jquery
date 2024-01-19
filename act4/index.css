@@ -1,0 +1,42 @@
+.container {
+    margin: 0 auto;
+    margin-top: 20px;
+    font-size: 30px;
+    text-align: center;
+    height: 400px;
+    width: 400px;
+    border: 2px black solid;
+    border-radius: 4px;
+}
+
+.createPostIts {
+    background-color:antiquewhite;
+    width: 300px;
+    height: 340px;
+    margin: 100px auto;
+    border-radius: 4px;
+    border: 2px black solid;
+    text-align: center;    
+}
+
+
+#createPostIts {
+    margin-top: 20px;    
+    height: 30px;    
+}
+
+p {
+    font-size: 18px;
+}
+
+#redContainer {
+    background-color: crimson;
+}
+
+#blueContainer {
+    background-color: lightblue;
+}
+
+.wrap{
+    display: flex;
+}
