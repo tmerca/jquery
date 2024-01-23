@@ -17,25 +17,31 @@ function createPostIt(){
     $(".postIt").css("height", "60px").css("width", "100px");
     $(".postIt").css("border", "2px black solid");
     coinFlip = Math.floor(Math.random() * 2);
-    console.log(coinFlip);
     if(coinFlip == 1){
-        $(".postIt").last().css("background-color", "#F80000");
+        $(".postIt").last().addClass("blue");
     }else {
-        $(".postIt").last().css("background-color", "blue");
+        $(".postIt").last().addClass("red");
     }
+
+    $(".postIt").on("click",() => {
+        
+    });
+
 }
 
 function updateCounter(){
+
     $("#blueContainer").droppable({
-        drop: function() {
+        accept: ".blue", 
+        drop: () => {
             
         }
     });
     $("#redContainer").droppable({
-        drop: function() {
-            
+        accept: ".red",
+        drop: () => {
+
         }
     });
-    
 
 }
