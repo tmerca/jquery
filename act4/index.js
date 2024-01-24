@@ -23,24 +23,23 @@ function createPostIt(){
         $(".postIt").last().addClass("red");
     }
 
-    $(".postIt").on("click",() => {
-        
-    });
-
 }
+
+var counterBlue = $("#blueContainer");
+
+console.log(counterBlue);
 
 function updateCounter(){
 
     $("#blueContainer").droppable({
         accept: ".blue", 
         drop: () => {
-            
         }
     });
     $("#redContainer").droppable({
         accept: ".red",
         drop: () => {
-
+            console.log("Red post it dropped");
         }
     });
 
