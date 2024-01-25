@@ -3,30 +3,51 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="shortcut icon" href="#" type="image/x-icon">
+    <link rel="shortcut icon" href="#" type="image/x-icon" />
     <title>Document</title>
     <link rel="stylesheet" href="index.css" />
   </head>
   <body>
-
     <div class="wrap">
-        <div class="container" id="blueContainer">
-            Blue container
-            <p class="bluePostIts">Number of post-its: <span id="counterBlue">0</span></p>
+      <div class="container" id="blueContainer">
+        Blue container
+        <p class="bluePostIts">
+          Number of post-its: <span id="counterBlue">0</span>
+        </p>
+      </div>
+      <div class="container" id="redContainer">
+        Red container
+        <p class="redPostIts">
+          Number of post-its: <span id="counterRed">0</span>
+        </p>
+      </div>
+    </div>
+  
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <span>Are you sure you want to delete the post-it?</span>
+        <div class="buttonsDelete">
+          <button id="yes">Yes</button>
+          <button id="no">No</button>
         </div>
-        <div class="container" id="redContainer">
-            Red container
-            <p class="redPostIts">Number of post-its: <span id="counterRed">0</span></p>
-        </div>
+      </div>
     </div>
 
     <div class="createPostIts">
-        <button id="createPostIts">Create</button>
-        <div class="createdPostIts"></div>
+      <button id="createPostIts">Create</button>
+      <div class="createdPostIts"></div>
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
     <script src="index.js"></script>
-    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js " integrity="sha256-lSjKY0/srUM9BE3dPm+c4fBo1dky2v27Gdjm2uoZaL0= " crossorigin="anonymous"></script>
+    <script
+      src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js "
+      integrity="sha256-lSjKY0/srUM9BE3dPm+c4fBo1dky2v27Gdjm2uoZaL0= "
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>
